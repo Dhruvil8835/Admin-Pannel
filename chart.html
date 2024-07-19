@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin pannel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+
+        .slide {
+            height: inherit;
+            width: 20%;
+            background-color: black;
+            position: fixed;
+        }
+
+        .nav {
+            height: 10vh;
+            width: 80%;
+            position: sticky;
+            left: 20%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .con {
+            position: absolute;
+            width: 80%;
+            height: 100vh;
+            left: 20%;
+            background-color: black;
+
+        }
+
+        .one {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .two {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .three {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .four {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .five {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .six {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .seven {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .eight {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .nine {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .ten {
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: azure;
+        }
+
+        .one a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .two a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .three a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .four a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .five a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .six a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .seven a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .eight a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .n2 {
+            height: 100px;
+            width: 30%;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .n2 a {
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .n2 img {
+            height: 30px;
+            width: 30px;
+            /* margin-right: 40px; */
+        }
+
+        .n3 {
+            height: 100px;
+            width: 70%;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .n3 img {
+            height: 50px;
+            width: 50px;
+            /* margin-left: 100px; */
+            padding: 10px;
+        }
+
+        .n3 #one {
+            margin-left: 800px;
+        }
+
+        .ele {
+            height: 30px;
+            width: 100%;
+            background-color: aqua;
+            display: none;
+        }
+
+        .ele p {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+
+        .nine a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .ten a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        #chart1 {
+            background-color: black;
+            height: 450px;
+            width: 100%;
+            margin-top: 100px;
+        }
+      
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="slide">
+            <div class="one"> <a href="admin-panel.html">Deshboard</a></div>
+            <div class="ele">
+                <p>Colors</p>
+            </div>
+            <div class="two"><a href="Setting.html">Setting</a></div>
+            <div class="three"><a href="admin-panel.html">Page Management</a></div>
+            <div class="four"><a href="admin-panel.html">Slider Management</a></div>
+            <div class="five"><a href="admin-panel.html">Team Management</a></div>
+            <div class="six"><a href="Setting.html">Service Management</a></div>
+            <div class="seven"><a href="calender.html">Calender</a></div>
+            <div class="eight"><a href="map.html">Map</a></div>
+            <div class="nine"><a href="chart.html">Charts</a></div>
+            <div class="ten"><a href="Setting.html">Widgets</a></div>
+
+
+        </div>
+        <div class="nav">
+            <div class="n2">
+                <img src="list.png" alt="">
+                <a href="">Deshboard</a>
+                <a href="">Users</a>
+                <a href="">Setting</a>
+            </div>
+            <div class="n3">
+                <img src="notification.png" alt="" id="one">
+                <img src="email (1).png" alt="">
+                <img src="online-resume.png" alt="">
+                <img src="moon.png" alt="">
+            </div>
+        </div>
+        <div class="con">
+         <div id="chart1"></div>
+         <div id="chart2"></div>
+        </div>
+        
+        <script> var options = {
+            series: [{
+            name: 'series1',
+            data: [31, 40, 28, 51, 42, 109, 100]
+          }, {
+            name: 'series2',
+            data: [11, 32, 45, 32, 34, 52, 41]
+          }],
+            chart: {
+            height: 350,
+            type: 'area'
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'smooth'
+          },
+          xaxis: {
+            type: 'datetime',
+            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          },
+          };
+  
+          var chart = new ApexCharts(document.querySelector("#chart1"), options);
+          chart.render();</script>
+          <script>var options = {
+            series: [{
+            name: 'north',
+            data: [{
+                x: 1996,
+                y: 322
+              },
+              {
+                x: 1997,
+                y: 324
+              },
+              {
+                x: 1998,
+                y: 329
+              },
+              {
+                x: 1999,
+                y: 342
+              },
+              {
+                x: 2000,
+                y: 348
+              },
+              {
+                x: 2001,
+                y: 334
+              },
+              {
+                x: 2002,
+                y: 325
+              },
+              {
+                x: 2003,
+                y: 316
+              },
+              {
+                x: 2004,
+                y: 318
+              },
+              {
+                x: 2005,
+                y: 330
+              },
+              {
+                x: 2006,
+                y: 355
+              },
+              {
+                x: 2007,
+                y: 366
+              },
+              {
+                x: 2008,
+                y: 337
+              },
+              {
+                x: 2009,
+                y: 352
+              },
+              {
+                x: 2010,
+                y: 377
+              },
+              {
+                x: 2011,
+                y: 383
+              },
+              {
+                x: 2012,
+                y: 344
+              },
+              {
+                x: 2013,
+                y: 366
+              },
+              {
+                x: 2014,
+                y: 389
+              },
+              {
+                x: 2015,
+                y: 334
+              }
+            ]
+          }, {
+            name: 'south',
+            data: [
+              {
+                x: 1996,
+                y: 162
+              },
+              {
+                x: 1997,
+                y: 90
+              },
+              {
+                x: 1998,
+                y: 50
+              },
+              {
+                x: 1999,
+                y: 77
+              },
+              {
+                x: 2000,
+                y: 35
+              },
+              {
+                x: 2001,
+                y: -45
+              },
+              {
+                x: 2002,
+                y: -88
+              },
+              {
+                x: 2003,
+                y: -120
+              },
+              {
+                x: 2004,
+                y: -156
+              },
+              {
+                x: 2005,
+                y: -123
+              },
+              {
+                x: 2006,
+                y: -88
+              },
+              {
+                x: 2007,
+                y: -66
+              },
+              {
+                x: 2008,
+                y: -45
+              },
+              {
+                x: 2009,
+                y: -29
+              },
+              {
+                x: 2010,
+                y: -45
+              },
+              {
+                x: 2011,
+                y: -88
+              },
+              {
+                x: 2012,
+                y: -132
+              },
+              {
+                x: 2013,
+                y: -146
+              },
+              {
+                x: 2014,
+                y: -169
+              },
+              {
+                x: 2015,
+                y: -184
+              }
+            ]
+          }],
+            chart: {
+            type: 'area',
+            height: 350
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'straight'
+          },
+          
+          title: {
+            text: 'Area with Negative Values',
+            align: 'left',
+            style: {
+              fontSize: '14px'
+            }
+          },
+          xaxis: {
+            type: 'datetime',
+            axisBorder: {
+              show: false
+            },
+            axisTicks: {
+              show: false
+            }
+          },
+          yaxis: {
+            tickAmount: 4,
+            floating: false,
+          
+            labels: {
+              style: {
+                colors: '#8e8da4',
+              },
+              offsetY: -7,
+              offsetX: 0,
+            },
+            axisBorder: {
+              show: false,
+            },
+            axisTicks: {
+              show: false
+            }
+          },
+          fill: {
+            opacity: 0.5
+          },
+          tooltip: {
+            x: {
+              format: "yyyy",
+            },
+            fixed: {
+              enabled: false,
+              position: 'topRight'
+            }
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                offsetX: -30
+              }
+            },
+            padding: {
+              left: 20
+            }
+          }
+          };
+  
+          var chart = new ApexCharts(document.querySelector("#chart2"), options);
+          chart.render();</script>
+
+
+
+
+        
+</body>
+
+</html>

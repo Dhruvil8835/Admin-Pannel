@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <!-- <link rel="stylesheet" href="Home.css"> -->
+  <style>
+  * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+    }
+
+    .main {
+      height: 100vh;
+      width: 100%;
+      background-color: black;
+    }
+
+    .slide {
+      height: inherit;
+      width: 20%;
+      background-color: black;
+      position: fixed;
+    }
+
+    .nav {
+      height: 10vh;
+      width: 80%;
+      position: sticky;
+      left: 20%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+    }
+
+    .con {
+      position: absolute;
+      width: 80%;
+      height: 100vh;
+      left: 20%;
+      background-color: black;
+
+    }
+
+    .one {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .two {
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .three {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .four {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .five {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .six {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .seven {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .eight {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .nine {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .ten {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: azure;
+    }
+
+    .one a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .two a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .three a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .four a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .five a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .six a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .seven a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .eight a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .n2 {
+      height: 100px;
+      width: 30%;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .n2 a {
+      text-decoration: none;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .n2 img {
+      height: 30px;
+      width: 30px;
+      /* margin-right: 40px; */
+    }
+
+    .n3 {
+      height: 100px;
+      width: 70%;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .n3 img {
+      height: 50px;
+      width: 50px;
+      /* margin-left: 100px; */
+      padding: 10px;
+    }
+
+    .n3 #one {
+      margin-left: 800px;
+    }
+
+    .ele {
+      height: 30px;
+      width: 100%;
+      background-color: aqua;
+      display: none;
+    }
+
+    .ele p {
+      font-size: 18px;
+      color: white;
+      text-align: center;
+    }
+
+    .nine a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .ten a {
+      text-decoration: none;
+      color: aliceblue;}
+        #chart {
+
+            background-color: black;
+            height: 400px;
+
+        }
+
+        #chart1 {
+
+            background-color: black;
+            height: 500px;
+            width: 50%;
+            position: relative;
+            right: 50px;
+            top: 40px;
+        }
+        #chart2{
+            height: 500px;
+            width: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 600px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="slide">
+            <div class="one"> <a href="admin-panel.html">Deshboard</a></div>
+            <div class="ele">
+                <p>Colors</p>
+            </div>
+            <div class="two"><a href="Setting.html">Setting</a></div>
+            <div class="three"><a href="admin-panel.html">Page Management</a></div>
+            <div class="four"><a href="admin-panel.html">Slider Management</a></div>
+            <div class="five"><a href="admin-panel.html">Team Management</a></div>
+            <div class="six"><a href="Setting.html">Service Management</a></div>
+            <div class="seven"><a href="calender.html">Calender</a></div>
+            <div class="eight"><a href="map.html">Map</a></div>
+            <div class="nine"><a href="chart.html">Charts</a></div>
+            <div class="ten"><a href="Setting.html">Widgets</a></div>
+
+
+        </div>
+        <div class="nav">
+            <div class="n2">
+                <img src="list.png" alt="">
+                <a href="">Deshboard</a>
+                <a href="">Users</a>
+                <a href="">Setting</a>
+            </div>
+            <div class="n3">
+                <img src="notification.png" alt="" id="one">
+                <img src="email (1).png" alt="">
+                <img src="online-resume.png" alt="">
+                <img src="moon.png" alt="">
+            </div>
+        </div>
+        <div class="con">
+            <div id="chart"></div>
+            <div id="chart1"></div>
+            <div id="chart2"></div>
+        </div>
+
+
+
+        <script>
+
+
+            var options = {
+                series: [{
+                    name: 'Sales',
+                    data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+                }],
+                chart: {
+                    height: 350,
+                    type: 'line',
+                },
+                forecastDataPoints: {
+                    count: 7
+                },
+                stroke: {
+                    width: 5,
+                    curve: 'smooth'
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001', '4/11/2001', '5/11/2001', '6/11/2001'],
+                    tickAmount: 10,
+                    labels: {
+                        formatter: function (value, timestamp, opts) {
+                            return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+                        }
+                    }
+                },
+                title: {
+                    text: 'Forecast',
+                    align: 'left',
+                    style: {
+                        fontSize: "16px",
+                        color: 'white'
+                    }
+                },
+                fill: {
+                    type: 'white',
+                    gradient: {
+                        shade: 'dark',
+                        gradientToColors: ['white'],
+                        shadeIntensity: 1,
+                        type: 'horizontal',
+                        opacityFrom: 1,
+                        opacityTo: 1,
+                        stops: [0, 100, 100, 100]
+                    },
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        </script>
+
+        <script>
+            var options = {
+                series: [67],
+                chart: {
+                    height: 350,
+                    type: 'radialBar',
+                    offsetY: -10
+                },
+                plotOptions: {
+                    radialBar: {
+                        startAngle: -135,
+                        endAngle: 135,
+                        dataLabels: {
+                            name: {
+                                fontSize: '16px',
+                                color: undefined,
+                                offsetY: 120
+                            },
+                            value: {
+                                offsetY: 76,
+                                fontSize: '22px',
+                                color: undefined,
+                                formatter: function (val) {
+                                    return val + "%";
+                                }
+                            }
+                        }
+                    }
+                },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shade: 'dark',
+                        shadeIntensity: 0.15,
+                        inverseColors: false,
+                        opacityFrom: 1,
+                        opacityTo: 1,
+                        stops: [0, 50, 65, 91]
+                    },
+                },
+                stroke: {
+                    dashArray: 4
+                },
+                labels: ['Median Ratio'],
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart1"), options);
+            chart.render();
+        </script>
+        <script>
+              
+        var options = {
+          series: [76, 67, 61, 90],
+          chart: {
+          height: 390,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            offsetY: 0,
+            startAngle: 0,
+            endAngle: 270,
+            hollow: {
+              margin: 5,
+              size: '30%',
+              background: 'transparent',
+              image: undefined,
+            },
+            dataLabels: {
+              name: {
+                show: false,
+              },
+              value: {
+                show: false,
+              }
+            },
+            barLabels: {
+              enabled: true,
+              useSeriesColors: true,
+              offsetX: -8,
+              fontSize: '16px',
+              formatter: function(seriesName, opts) {
+                return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+              },
+            },
+          }
+        },
+        colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+        labels: ['Vimeo', 'Messenger', 'Facebook', 'LinkedIn'],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            legend: {
+                show: false
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+        chart.render();
+        </script>
+
+</body>
+
+</html>
